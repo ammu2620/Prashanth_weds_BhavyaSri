@@ -343,22 +343,12 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    const meal = attendance === "accept"
-      ? $('input[name="meal"]:checked', form)?.value || ""
-      : "";
-
-    if (attendance === "accept" && !meal) {
-      status.textContent = "Please select a meal preference.";
-      status.classList.add("error");
-      return;
-    }
+  
 
     const record = {
       submittedAt: new Date().toISOString(),
       name: $("#guestName").value.trim(),
-      phone: $("#phoneNumber").value.trim(),
       attendance: attendance === "accept" ? "Joyfully Accept" : "Regretfully Decline",
-      meal,
       message: $("#blessingMessage").value.trim()
     };
 

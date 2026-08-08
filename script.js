@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const musicButton = $("#musicButton");
 
   const acceptButton = $("#acceptButton");
-  const declineButton = $("#declineButton");
+  const declineButton = $("#declineButton");   
   const acceptFields = $("#acceptFields");
   const form = $("#rsvpForm");
   const status = $("#formStatus");

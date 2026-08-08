@@ -316,9 +316,7 @@ document.addEventListener("DOMContentLoaded", () => {
       body: JSON.stringify({
         _subject: `Wedding RSVP: ${record.name}`,
         Name: record.name,
-        Phone: record.phone,
         Attendance: record.attendance,
-        Meal: record.meal || "Not applicable",
         Blessings: record.message || ""
       })
     });

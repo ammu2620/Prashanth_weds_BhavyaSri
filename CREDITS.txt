@@ -1,0 +1,7 @@
+REALISTIC PHOTO BACKGROUNDS
+
+This invitation uses remote Unsplash photographs for its cinematic backgrounds.
+The 3D appearance is created with CSS perspective, glass layers, depth shadows,
+parallax movement, light sweeps, bokeh, film grain, and interactive tilt effects.
+
+The source image URLs are contained in style.css.

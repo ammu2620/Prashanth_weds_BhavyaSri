@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#071626">
+  <meta name="description" content="Prashanth and Bhavya Sri wedding invitation">
+  <title>Prashanth & Bhavya Sri | Wedding Invitation</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="ambientCanvas" aria-hidden="true"></canvas>
+  <div class="film-grain" aria-hidden="true"></div>
+  <div id="sitePetals" class="site-petals" aria-hidden="true"></div>
+
+  <audio id="backgroundMusic" loop preload="auto">
+    <source src="assets/instrumental.wav" type="audio/wav">
+  </audio>
+
+  <button id="musicButton" class="music-button" type="button" aria-label="Play or pause music">
+    <span class="music-icon">♪</span>
+  </button>
+
+  <!-- REALISTIC CINEMATIC OPENING -->
+  <section id="openingScreen" class="opening-screen">
+    <div class="opening-photo"></div>
+    <div class="opening-vignette"></div>
+    <div class="opening-light opening-light-one"></div>
+    <div class="opening-light opening-light-two"></div>
+
+    <div id="openingPetals" class="opening-petals" aria-hidden="true"></div>
+
+    <div class="butterfly-flight" aria-hidden="true">
+      <div class="butterfly3d">
+        <span class="antenna antenna-left"></span>
+        <span class="antenna antenna-right"></span>
+        <span class="wing wing-left"></span>
+        <span class="wing wing-right"></span>
+        <span class="butterfly-body"></span>
+      </div>
+      <div id="sparkleTrail" class="sparkle-trail"></div>
+    </div>
+
+    <div class="ring-scene" aria-hidden="true">
+      <div class="ring ring-one"></div>
+      <div class="ring ring-two"></div>
+      <div class="ring-glow"></div>
+    </div>
+
+    <div class="opening-card depth-card">
+      <p class="opening-kicker">Together with our families</p>
+      <div class="opening-monogram">P <span>&</span> B</div>
+      <h1><span data-groom>Prashanth</span> <em>&</em> <span data-bride>Bhavya Sri</span></h1>
+      <p class="opening-date">SEPTEMBER 26 · 2026</p>
+      <p class="opening-subtitle">A celebration of faith, family & love</p>
+
+      <button
+        id="openInvitationButton"
+        class="luxury-button"
+        type="button"
+        onclick="document.getElementById('openingScreen').classList.add('opening-hidden');document.body.classList.remove('locked');"
+      >
+        Open Invitation
+        <span class="button-shine"></span>
+      </button>
+    </div>
+
+    <div class="scroll-cue" aria-hidden="true"><span></span></div>
+  </section>
+
+  <main id="mainWebsite">
+    <!-- HERO -->
+    <section class="hero-photo-section parallax-section" data-speed="0.12">
+      <div class="hero-photo"></div>
+      <div class="photo-overlay"></div>
+      <div class="hero-bokeh" aria-hidden="true"></div>
+
+      <div class="hero-content reveal-on-scroll">
+        <p class="eyebrow">WITH THE BLESSING OF GOD & OUR FAMILIES</p>
+        <h1 class="hero-name" data-groom>Prashanth</h1>
+        <div class="hero-and">&</div>
+        <h1 class="hero-name" data-bride>Bhavya Sri</h1>
+
+        <div class="hero-date-glass tilt-card" data-tilt>
+          <span>Saturday</span>
+          <strong>26</strong>
+          <span>September 2026</span>
+        </div>
+
+        <p class="hero-line">
+          We joyfully invite you to witness the beginning of our forever.
+        </p>
+      </div>
+
+      <div class="hero-glass-ribbon reveal-on-scroll">
+        <span class="ribbon-item">Wedding Ceremony</span><i></i>
+        <span class="ribbon-item">3:00 PM</span><i></i>
+        <span class="ribbon-item">Abundant Grace Church</span>
+      </div>
+    </section>
+
+    <!-- CINEMATIC PHOTO INTRO -->
+    <section class="section cinematic-intro">
+      <div class="section-heading reveal-on-scroll">
+        <p class="eyebrow">OUR SACRED DAY</p>
+        <h2>One Ceremony.<br>One Beautiful Beginning.</h2>
+        <p>
+          We would be honored to have you with us as we exchange our vows
+          before God and celebrate with lunch immediately after the ceremony.
+        </p>
+      </div>
+
+      <div class="photo-stack reveal-on-scroll">
+        <article class="stack-photo stack-photo-one tilt-card" data-tilt>
+          <div class="stack-image stack-image-one"></div>
+          <div class="stack-glass">
+            <small>THE CEREMONY</small>
+            <strong>3:00 PM</strong>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- COUNTDOWN -->
+    <section class="section countdown-section">
+      <div class="countdown-photo"></div>
+      <div class="countdown-overlay"></div>
+
+      <div class="countdown-content reveal-on-scroll">
+        <p class="eyebrow">COUNTING DOWN TO FOREVER</p>
+        <h2>September 26, 2026</h2>
+
+        <div class="countdown-grid">
+          <div class="countdown-cube"><strong id="days">00</strong><span>Days</span></div>
+          <div class="countdown-cube"><strong id="hours">00</strong><span>Hours</span></div>
+          <div class="countdown-cube"><strong id="minutes">00</strong><span>Minutes</span></div>
+          <div class="countdown-cube"><strong id="seconds">00</strong><span>Seconds</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WEDDING + LUNCH ONLY -->
+    <section class="section schedule-section">
+      <div class="section-heading reveal-on-scroll">
+        <p class="eyebrow">THE DAY</p>
+        <h2>Wedding & Lunch</h2>
+        <p>
+          Everything takes place at the same church, so you can simply arrive,
+          celebrate with us, and stay for lunch afterward.
+        </p>
+      </div>
+
+      <div class="event-stack">
+        <article class="photo-event wedding-event tilt-card reveal-on-scroll" data-tilt>
+          <div class="event-photo event-photo-church"></div>
+          <div class="event-shade"></div>
+          <div class="event-glow"></div>
+          <div class="event-content">
+            <p class="event-number">01</p>
+            <p class="event-label">THE CEREMONY</p>
+            <h3>Christian Wedding Ceremony</h3>
+            <p class="event-big-time" id="weddingTimeText">3:00 PM</p>
+            <p id="weddingDateText">September 26, 2026</p>
+            <p id="churchNameText">Abundant Grace Church</p>
+            <p id="churchAddressText">127 Rockingham Rd, Derry, NH 03038</p>
+            <a id="weddingMapLink" class="glass-button" target="_blank" rel="noopener">Open Map</a>
+          </div>
+        </article>
+
+        <article class="photo-event lunch-event tilt-card reveal-on-scroll" data-tilt>
+          <div class="event-photo event-photo-lunch"></div>
+          <div class="event-shade"></div>
+          <div class="event-glow warm-glow"></div>
+          <div class="event-content">
+            <p class="event-number">02</p>
+            <p class="event-label">AFTER THE CEREMONY</p>
+            <h3 id="lunchTitleText">Lunch & Fellowship</h3>
+            <p class="event-big-time event-big-time-small" id="lunchTimeText">Immediately after the wedding ceremony</p>
+            <p id="lunchVenueText">Abundant Grace Church</p>
+            <p id="lunchAddressText">127 Rockingham Rd, Derry, NH 03038</p>
+            <p class="event-note">Please stay with us after the ceremony and share a joyful meal together.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CINEMATIC IMAGE MOMENTS -->
+    <section class="moments-section">
+      <div class="moments-track" aria-hidden="true">
+        <div class="moment-card moment-a"></div>
+        <div class="moment-card moment-b"></div>
+        <div class="moment-card moment-c"></div>
+        <div class="moment-card moment-d"></div>
+        <div class="moment-card moment-e"></div>
+        <div class="moment-card moment-f"></div>
+        <div class="moment-card moment-a"></div>
+        <div class="moment-card moment-b"></div>
+        <div class="moment-card moment-c"></div>
+        <div class="moment-card moment-d"></div>
+        <div class="moment-card moment-e"></div>
+        <div class="moment-card moment-f"></div>
+      </div>
+      <div class="moments-caption reveal-on-scroll">
+        <p class="eyebrow">A DAY TO REMEMBER</p>
+        <h2>Faith. Love. Family.</h2>
+      </div>
+    </section>
+
+    <!-- VENUE FOCUS -->
+    <section class="section venue-section">
+      <div class="venue-photo-card tilt-card reveal-on-scroll" data-tilt>
+        <div class="venue-photo"></div>
+        <div class="venue-overlay"></div>
+        <div class="venue-content">
+          <p class="eyebrow">OUR VENUE</p>
+          <h2>Abundant Grace Church</h2>
+          <p>127 Rockingham Rd, Derry, NH 03038</p>
+          <p class="venue-time">Saturday · September 26 · 3:00 PM</p>
+          <a id="venueMapLink" class="luxury-button" target="_blank" rel="noopener">
+            View Location
+            <span class="button-shine"></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3D FAITH PANEL -->
+    <section class="section faith-section">
+      <div class="faith-photo"></div>
+      <div class="faith-overlay"></div>
+
+      <div class="faith-glass tilt-card reveal-on-scroll" data-tilt>
+        <span class="cross-mark" aria-hidden="true"></span>
+        <p class="eyebrow">A COVENANT BEFORE GOD</p>
+        <h2>Two lives. One promise. One beautiful beginning.</h2>
+        <p>
+          With grateful hearts, we invite you to be present as we begin our
+          marriage surrounded by prayer, family and love.
+        </p>
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section class="section rsvp-section">
+      <div class="rsvp-backdrop"></div>
+      <div class="rsvp-light"></div>
+
+      <div class="rsvp-card tilt-card reveal-on-scroll" data-tilt>
+        <div class="rsvp-metallic-edge"></div>
+        <p class="eyebrow">RSVP</p>
+        <h2>Will You Join Us?</h2>
+
+        <form id="rsvpForm">
+          <label>
+            Full Name
+            <input id="guestName" name="name" type="text" placeholder="Enter your name" required>
+          </label>
+
+          <label>
+            Phone Number
+            <input id="phoneNumber" name="phone" type="tel" placeholder="+1 000 000 0000" required>
+          </label>
+
+          <div class="attendance-buttons">
+            <button id="acceptButton" class="attendance-button" type="button" data-attendance="accept">
+              Joyfully Accept
+            </button>
+            <button id="declineButton" class="attendance-button" type="button" data-attendance="decline">
+              Regretfully Decline
+            </button>
+          </div>
+
+          <!-- Hidden initially. It opens ONLY after Joyfully Accept. -->
+          <div id="acceptFields" class="accept-fields hidden">
+            <fieldset>
+              <legend>Meal Preference</legend>
+
+              <label class="option-card">
+                <input type="radio" name="meal" value="Vegetarian">
+                <span>Vegetarian</span>
+              </label>
+
+              <label class="option-card">
+                <input type="radio" name="meal" value="Non-Vegetarian">
+                <span>Non-Vegetarian</span>
+              </label>
+            </fieldset>
+          </div>
+
+          <label>
+            Your Blessings
+            <textarea id="blessingMessage" name="message" rows="4" placeholder="Write your wishes for us"></textarea>
+          </label>
+
+          <button id="submitRsvpButton" class="luxury-button submit-button" type="submit">
+            Send RSVP
+            <span class="button-shine"></span>
+          </button>
+
+          <p id="formStatus" class="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- VERSE -->
+    <section class="section verse-section">
+      <div class="verse-photo"></div>
+      <div class="verse-overlay"></div>
+      <div class="verse-content reveal-on-scroll">
+        <span class="cross-mark large-cross" aria-hidden="true"></span>
+        <blockquote id="verseText"></blockquote>
+        <cite id="verseReference"></cite>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-glow"></div>
+      <p>With love</p>
+      <h2><span data-groom>Prashanth</span> & <span data-bride>Bhavya Sri</span></h2>
+      <p id="footerDate">September 26, 2026 · 3:00 PM</p>
+      <p class="footer-location">Abundant Grace Church · Derry, New Hampshire</p>
+    </footer>
+  </main>
+
+  <!-- SUCCESS POPUP -->
+  <div id="successPopup" class="modal" aria-hidden="true">
+    <div class="success-card">
+      <div class="success-ring"></div>
+      <p class="eyebrow">THANK YOU</p>
+      <h3>We can't wait to celebrate with you.</h3>
+      <p>Your RSVP has been recorded.</p>
+      <button id="closeSuccessPopup" class="luxury-button" type="button">Close</button>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

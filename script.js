@@ -284,10 +284,32 @@ document.addEventListener("DOMContentLoaded", () => {
   acceptButton?.addEventListener("click", chooseAccept);
   declineButton?.addEventListener("click", chooseDecline);
 
-  function showSuccess() {
-    successPopup?.classList.add("show");
-    document.body.classList.add("locked");
+function showSuccess() {
+  const successHeading = document.getElementById("successHeading");
+  const successMessage = document.getElementById("successMessage");
+
+  if (attendance === "accept") {
+    if (successHeading) {
+      successHeading.style.display = "block";
+      successHeading.textContent = "We can't wait to celebrate with you.";
+    }
+
+    if (successMessage) {
+      successMessage.textContent = "Your RSVP has been recorded.";
+    }
+  } else {
+    if (successHeading) {
+      successHeading.style.display = "none";
+    }
+
+    if (successMessage) {
+      successMessage.textContent = "Your RSVP has been recorded.";
+    }
   }
+
+  successPopup?.classList.add("show");
+  document.body.classList.add("locked");
+}
 
   function hideSuccess() {
     successPopup?.classList.remove("show");

@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const openButton = $("#openInvitationButton");
   const music = $("#backgroundMusic");
   const musicButton = $("#musicButton");
-
+ 
   const acceptButton = $("#acceptButton");
   const declineButton = $("#declineButton");   
   const acceptFields = $("#acceptFields");

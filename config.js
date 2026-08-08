@@ -23,5 +23,5 @@ window.WEDDING_CONFIG = {
   bibleReference: "1 Corinthians 13:13",
 
   /* Replace this with your email if you want RSVP email delivery. */
-  rsvpEmail: "bhavya.sri.20.26.01@gmail.com"
+  rsvpEmail: "ammu262026@gmail.com"
 };
